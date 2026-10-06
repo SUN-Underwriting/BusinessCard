@@ -15,7 +15,7 @@ export function cardFront(c: CardData, logoSrc: string, extraClass = ""): string
     esc(websiteDisplay(c)),
   ];
   return `<div class="gc gc--front ${extraClass}">
-<svg class="gc-emboss" width="340" height="189" viewBox="0 0 340 189" fill="none" aria-hidden="true"><path d="M326 9.5 L37 9.5 C21 9.5 9.5 21 9.5 37 L9.5 177" stroke="#B9B8B1" stroke-width="1.2" stroke-linecap="round"/><path d="M326 10.7 L37 10.7 C22 10.7 10.7 22 10.7 37 L10.7 177" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"/><path d="M9.5 177.5 L328 177.5" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round"/><path d="M9.5 178.9 L328 178.9" stroke="#C6C5BE" stroke-width="1" stroke-linecap="round"/></svg>
+<svg class="gc-emboss" width="340" height="189" viewBox="0 0 340 189" fill="none" aria-hidden="true"><path d="M330.5 178.9 L330.5 16.5 Q330.5 9.5 323.5 9.5 L37 9.5 C21 9.5 9.5 21 9.5 37 L9.5 177" stroke="#B9B8B1" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M329.3 177.5 L329.3 16.7 Q329.3 10.7 323.3 10.7 L37 10.7 C22 10.7 10.7 22 10.7 37 L10.7 177" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 177.5 L329.3 177.5" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round"/><path d="M9.5 178.9 L330.5 178.9" stroke="#C6C5BE" stroke-width="1" stroke-linecap="round"/></svg>
 <div class="gc-brand">
 <img src="${esc(logoSrc)}" alt="GLINSO — Global Insurance Solutions">
 <div class="gc-company">${esc(c.company)}</div>
