@@ -81,11 +81,10 @@ export function telegramUrl(c: CardData): string | undefined {
 
 export const whatsappUrl = (c: CardData) => (c.whatsapp ? `https://wa.me/${c.whatsapp}` : undefined);
 
-/** "Head of Reinsurance - South East Asia" -> ["Head of Reinsurance –", "South East Asia"] */
+/** One line by default: "Head of Reinsurance - South East Asia" -> ["Head of Reinsurance – South East Asia"] */
 export function cardTitleLines(c: CardData): string[] {
   if (c.cardTitleLines) return c.cardTitleLines;
-  const i = c.title.indexOf(" - ");
-  return i < 0 ? [c.title] : [`${c.title.slice(0, i)} –`, c.title.slice(i + 3)];
+  return [c.title.replace(" - ", " – ")];
 }
 
 export function cardAddressLines(c: CardData): string[] {

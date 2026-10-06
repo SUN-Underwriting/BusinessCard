@@ -87,8 +87,8 @@ Decide the final domain **before printing cards**: the printed QR contains it.
    - `telegram`: a username without `@` (`t.me/<username>`) or a phone number
      starting with `+` (`t.me/+<digits>`).
    - Optional `cardTitleLines` / `cardAddressLines` (arrays of strings) override
-     how the title and address break on the card. By default the title breaks at
-     ` - ` and the address shows street, then `city, country` (UAE/UK shortened).
+     how the title and address break on the card. By default the title is one line
+     (` - ` becomes `–`) and the address shows street, then `city, country` (UAE/UK shortened).
 3. Push to `main`. Done: the card is at `<SITE_URL>/c/<slug>/` and its print QR at
    `<SITE_URL>/c/<slug>/qr.png`.
 
