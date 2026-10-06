@@ -1,0 +1,68 @@
+/* Public contact page: c/<slug>/ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #ECEBE6;
+  color: #101828;
+  font-family: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: max(28px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+}
+.eyebrow { margin: 0 0 18px; text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #667085; }
+
+/* The card is a real button that flips on tap. */
+.flip {
+  display: block; width: 100%; margin: 0; padding: 0; border: 0; background: none;
+  cursor: pointer; -webkit-tap-highlight-color: transparent; border-radius: 14px;
+}
+.flip:focus-visible { outline: 3px solid #1570B0; outline-offset: 6px; }
+.flip .gc-scale { perspective: 1400px; }
+.flip-inner { position: relative; width: 340px; height: 189px; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.3, 0.7, 0.3, 1); }
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+.face { position: absolute; inset: 0; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.face--back { transform: rotateY(180deg); }
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { transform: none !important; transition: none; }
+  .face { transition: opacity 0.3s linear; }
+  .face--back { transform: none; opacity: 0; }
+  .flip.is-flipped .face--front { opacity: 0; }
+  .flip.is-flipped .face--back { opacity: 1; }
+}
+
+/* Soft shadow that follows the die-cut (box-shadow follows the border-radius). */
+.gc.lifted {
+  box-shadow: inset 0 0 0 1px #FFFFFF, 0 1px 2px rgba(16, 24, 40, 0.08), 0 10px 22px -6px rgba(16, 24, 40, 0.22), 0 24px 40px -16px rgba(16, 24, 40, 0.18);
+}
+
+.hint { margin: 16px 0 26px; text-align: center; font-size: 14px; color: #667085; }
+
+.actions { display: flex; flex-direction: column; gap: 12px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 17px;
+  -webkit-tap-highlight-color: transparent; transition: background-color 100ms linear, transform 100ms linear;
+}
+.btn:active { transform: scale(0.985); }
+.btn:focus-visible { outline: 3px solid #1570B0; outline-offset: 2px; }
+.btn--primary { height: 54px; background: #1570B0; color: #FFFFFF; font-size: 18px; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.12); }
+.btn--primary:hover { background: #125f96; }
+.btn--outline { background: #FFFFFF; border: 1px solid #D0D5DD; color: #344054; }
+.btn--outline:hover { background: #F9FAFB; }
+.btn--outline .icon { color: #1570B0; }
+.btn--big { height: 54px; }
+.btn--small { height: 44px; font-size: 15px; }
+.btn--small .icon { width: 18px; height: 18px; }
+
+.footer { margin-top: 32px; text-align: center; font-size: 13px; color: #667085; }
+.footer a { color: inherit; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
